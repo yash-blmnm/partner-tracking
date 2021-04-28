@@ -1,8 +1,15 @@
 import React from 'react'
 import { Modal } from 'react-bootstrap';
-
+import { useHistory } from 'react-router-dom';
 
 function LeftSideModal ({ show, onModalClose }) {
+
+  const history = useHistory();
+
+  const onClickPartners = () => {
+    history.push(`/`);
+    onModalClose();
+  }
 
   return (
     <Modal show={show} onHide={onModalClose} animation={true} className="modal left border-0" id="sidebar-left" tabindex="-1" role="dialog">
@@ -14,7 +21,7 @@ function LeftSideModal ({ show, onModalClose }) {
       </Modal.Header>
       <Modal.Body className="bg-light">
         <ul class="list-group list-group-flush w-100">
-          <li class="list-group-item">All Partners <span className="show-details rounded-circle px-1 v-small">{'>'}</span></li>
+          <li class="list-group-item" onClick={onClickPartners}>All Partners <span className="show-details rounded-circle px-1 v-small">{'>'}</span></li>
           <li class="list-group-item">Logout <span className="show-details rounded-circle px-1 v-small">{'>'}</span></li>
         </ul>
       </Modal.Body>

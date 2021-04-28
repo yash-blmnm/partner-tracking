@@ -5,7 +5,7 @@ import Sider from './components/Sider'
 import MainContainer from './components/MainContainer';
 import {isMobile} from 'react-device-detect';
 import ListPartners from './components/ListPartners'
-import { BrowserRouter as Router, Route} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 function App() {
   return (
@@ -21,7 +21,17 @@ function App() {
           </Route>
         </div>
       </div>
-      : <div className="container-md main-offset bg-light py-3"> <ListPartners /></div>}
+      : <div className="container-md main-offset bg-light py-3"> 
+        {/* <ListPartners /> */}
+        <Switch>
+          <Route exact path="/">
+            <ListPartners />
+          </Route>
+          <Route path="/partners/:id">
+            <MainContainer />
+          </Route>
+        </Switch>
+      </div>}
       </div>
     </Router>
     

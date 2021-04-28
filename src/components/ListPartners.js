@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { partners } from '../mock.json';
-import { useParams } from 'react-router-dom';
-
-console.log(partners);
+import { useParams, Link, useHistory } from 'react-router-dom';
+import {isMobile} from 'react-device-detect';
 
 const statusMap = {
   0: 'inactive',
@@ -12,18 +11,27 @@ const statusMap = {
 }
 
 function ListPartners () {
-  const [classes, setClasses] = useState(["list-group-item", "border-bottom", "border-right", "partner-list"]);
-  let { id } = useParams();
-  useEffect => (() => {
-
-  }, [])
+  const baseClass = ["list-group-item", "border-bottom", "border-right", "partner-list"];
+  const activeClass = [...baseClass, "active-partner-item"];
+  const [activeId, setactiveId] = useState('');
+  const { id } = useParams();
+  const history = useHistory();
+  
+    useEffect(() => {
+      if(!isMobile){
+        const [firstpartner] = partners;
+        let currentId = id ? id : firstpartner.id;
+        setactiveId(currentId);
+        history.push(`/partners/${currentId}`)
+      }
+    }, [])
 
   return (
     <div className="list-group list-group-flush">
       {partners.map((partner, i) => {
         return (
-          <div key={partner.id} className={classes.join(' ')}>
-            <Link to={`/partners/${partner.id}`}>
+          <div key={partner.id} className={activeId == partner.id ? activeClass.join(' ') : baseClass.join(' ')}>
+            <Link to={`/partners/${partner.id}`} onClick={() => setactiveId(partner.id)}>
               <p className="mb-half"><strong className="strong-light">{partner.name}</strong></p>
               <p className="mb-half"><small className="v-small">{partner.id} | {partner.phone}</small></p>
               <p className="mb-half v-small">

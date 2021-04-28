@@ -2,6 +2,7 @@ import React from 'react';
 import {useState} from 'react';
 import {isMobile} from 'react-device-detect';
 import LeftSideModal from './LeftSideModal';
+import { Link } from 'react-router-dom';
 
 // import container from 'tailwindcss';
 // import 
@@ -25,7 +26,7 @@ function Header() {
           <a className="navbar-brand" href="#">
             <img src='./assets/logo.png' width='85px'/>
           </a>
-          <button type="button" className="btn btn-warning px-2 py-1 call-btn rounded-pill">All Partners</button>
+          <Link to="/" type="button" className="btn btn-warning px-2 py-1 call-btn rounded-pill">All Partners</Link>
         </div>
         : 
         <div className="container-fluid p-1 mx-3">

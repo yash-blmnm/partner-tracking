@@ -1,8 +1,12 @@
 import React from 'react'
 import MapContainer from './MapContainer'
+import { useParams } from 'react-router-dom';
 
 
 function MainContainer () {
+  let { id } = useParams();
+
+  console.log(id);
   return (
     <main role="main" className="bg-light col-md-9 ms-auto col-lg-10 w-82 pt-4 px-5">
       <h6>PARTNER DETAILS</h6>
