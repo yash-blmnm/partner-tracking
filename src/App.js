@@ -1,24 +1,30 @@
 import logo from './logo.svg';
-import './App.css';
+// import './App.css';
+import Header from './components/Header'
+import Sider from './components/Sider'
+import MainContainer from './components/MainContainer';
+import {isMobile} from 'react-device-detect';
+import ListPartners from './components/ListPartners'
+import { BrowserRouter as Router, Route} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        {!isMobile ?
+        <div className="container-fluid main-offset">
+        <div className="row">
+          <Sider />
+          <Route path="/partners/:id">
+            <MainContainer />
+          </Route>
+        </div>
+      </div>
+      : <div className="container-md main-offset bg-light py-3"> <ListPartners /></div>}
+      </div>
+    </Router>
+    
   );
 }
 

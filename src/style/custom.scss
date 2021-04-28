@@ -1,0 +1,210 @@
+// Override default variables before the import
+// $body-bg: #000;
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+$navH: 73px;
+$round-size: 8px;
+$bg-color: #f7f6f6;
+$bg-color-secondary: #404040;
+$v-small: 0.7rem;
+$border-color: #dee2e6;
+$selected-color: #FFF7EA;
+
+body {
+  font: 1rem/1.5 var(--bs-font-sans-serif);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100; /* Behind the navbar */
+  padding: 0;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.sidebar-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: $navH; /* Height of navbar */
+  height: calc(100vh - 73px); /* Height of navbar */
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+.btn-logout {
+  background-color: $red-500;
+  border-color: $red-500;
+}
+
+.bg-white {
+  background-color: $white;
+}
+
+.search-btn {
+  position: relative;
+  .form-control{
+    background-color: #F0F0F0;
+    font-size: $small-font-size;
+  }
+  
+}
+
+.w-18 {
+  width: 18%;
+}
+
+.list-group-item p {
+  line-height: $headings-line-height;
+  
+}
+
+.v-small {
+  font-size: $v-small;
+}
+
+.strong-light {
+  font-weight: 600;
+}
+
+.status-round {
+  height: $round-size;
+  width: $round-size;
+  display: inline-block;
+}
+
+.mb-half {
+  margin: 0 0 ($spacer * 0.3);
+}
+
+.main-offset {
+  position: relative;
+  top: $navH;
+}
+
+.w-82 {
+  width: 82%;
+}
+
+.call-btn {
+  font-size: 0.750rem;
+  font-weight: 600;
+}
+
+.main {
+  background-color: $bg-color;
+}
+
+.map-container {
+  min-height: 350px;
+
+}
+
+.map {
+  position: relative !important;
+}
+
+.show-details {
+  position: absolute;
+  right: 8%;
+  top: 40%;
+  line-height: $v-small;
+  padding: 0 0 0.15rem;
+}
+
+.bg-show-details {
+  color: $white;
+  background-color: $bg-color-secondary;
+}
+
+.bg-visit {
+  background-color: $success;
+}
+
+@include media-breakpoint-up(sm) {
+  .partner-list {
+    // border-0 border-bottom border-end py-4 ps-4
+    padding: $spacer * 1.5;
+    padding-right: $spacer / 4;
+    margin-right: 1px;
+  }
+}
+
+@include media-breakpoint-down(sm) { 
+  .partner-list {
+    border: 1px solid $border-color;
+    padding: $spacer / 2;
+    margin: $spacer / 2;
+  }
+  
+}
+
+// .modal.fade:not(.in).left .modal-dialog {
+//   -webkit-transform: translate3d(-25%, 0, 0);
+//   transform: translate3d(-25%, 0, 0);
+// }
+
+.modal.left .modal-dialog {
+  position:absolute;
+  top:0;
+  left:0;
+  margin:0;
+}
+
+.modal.left .modal-dialog {
+  max-width: 75%;
+  min-width: 75%;
+}
+
+.modal.left .modal-content, .modal.right .modal-content {
+  min-height:100vh;
+  border:0;
+}
+
+.modal.fade:not(.in).left .modal-dialog {
+	-webkit-transform: translate3d(-1%, 0, 0);
+  transform: translate3d(-1%, 0, 0);
+}
+.modal.fade:not(.in).right .modal-dialog {
+	-webkit-transform: translate3d(25%, 0, 0);
+	transform: translate3d(25%, 0, 0);
+}
+.modal.fade:not(.in).bottom .modal-dialog {
+	-webkit-transform: translate3d(0, 25%, 0);
+	transform: translate3d(0, 25%, 0);
+}
+
+// .left.fade {
+//   transition: margin .25s ease-out;
+// }
+
+.modal.left.fade .modal-dialog{
+  // left: -320px;
+  -webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
+     -moz-transition: opacity 0.3s linear, left 0.3s ease-out;
+       -o-transition: opacity 0.3s linear, left 0.3s ease-out;
+          transition: opacity 0.3s linear, left 0.3s ease-out;
+}
+
+.modal.left.fade.in .modal-dialog{
+  left: 0;
+}
+
+// .modal-close {
+//   padding: 0;
+//   cursor: pointer;
+//   background: transparent;
+//   border: 0;
+//   -webkit-appearance: none;
+//   float: right;
+//   font-size: 22.5px;
+//   font-weight: bold;
+//   line-height: 1;
+//   margin-top: -2px;
+//   color: #333333;
+//   text-decoration: none;
+//   text-shadow: none;
+//   opacity: 0.4;
+// }
