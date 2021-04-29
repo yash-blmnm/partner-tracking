@@ -6,14 +6,6 @@ import OrderInfo from '../Oders/Info';
 import {isMobile} from 'react-device-detect';
 import { partners } from '../../constants/mock.json';
 
-const statusMap = {
-  0: 'inactive',
-  1: 'active',
-  2: 'visit',
-  3: 'idle'
-}
-
-
 function MainContainer () {
   const { id } = useParams();
   const  [partnerId, setPartnerId] = useState('');

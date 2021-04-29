@@ -2,13 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { partners } from '../../constants/mock.json';
 import { useParams, Link, useHistory } from 'react-router-dom';
 import {isMobile} from 'react-device-detect';
+import {statusMap} from '../../constants/statusMap';
 
-const statusMap = {
-  0: 'inactive',
-  1: 'active',
-  2: 'visit',
-  3: 'idle'
-}
 
 function ListPartners () {
   const baseClass = ["list-group-item", "border-bottom", "border-right", "partner-list"];
