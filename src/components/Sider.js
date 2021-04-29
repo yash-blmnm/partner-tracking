@@ -1,5 +1,5 @@
 import React from 'react'
-import ListPartners from './ListPartners';
+import ListPartners from './Partners/ListPartners';
 
 function Sider () {
   return (

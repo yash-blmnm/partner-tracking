@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { partners } from '../mock.json';
+import { partners } from '../../constants/mock.json';
 import { useParams, Link, useHistory } from 'react-router-dom';
 import {isMobile} from 'react-device-detect';
 

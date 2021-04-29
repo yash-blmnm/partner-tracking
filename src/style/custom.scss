@@ -1,6 +1,3 @@
-// Override default variables before the import
-// $body-bg: #000;
-
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
 $navH: 73px;
@@ -10,10 +7,22 @@ $bg-color-secondary: #404040;
 $v-small: 0.7rem;
 $border-color: #dee2e6;
 $selected-color: #FFF7EA;
+$col-48p: 48%;
+$btn-red:  #dc3545;
 
 body {
   font: 1rem/1.5 var(--bs-font-sans-serif);
 }
+
+.btn-logout{
+  &:focus, &:hover, &:active , &:active:focus{
+    background-color: $btn-red;
+    border-color: $btn-red;
+    box-shadow: none;
+  }
+}
+
+/* Sidebar style */
 
 .sidebar {
   position: fixed;
@@ -34,6 +43,8 @@ body {
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
 
+/* --- */
+
 .btn-logout {
   background-color: $red-500;
   border-color: $red-500;
@@ -52,9 +63,14 @@ body {
   
 }
 
+/* custom width */
 .w-18 {
   width: 18%;
 }
+.w-82 {
+  width: 82%;
+}
+/* --- */
 
 .list-group-item p {
   line-height: $headings-line-height;
@@ -84,9 +100,6 @@ body {
   top: $navH;
 }
 
-.w-82 {
-  width: 82%;
-}
 
 .call-btn {
   font-size: 0.750rem;
@@ -119,9 +132,18 @@ body {
   background-color: $bg-color-secondary;
 }
 
+/* Status icon fill colours */
 .bg-visit {
   background-color: $success;
 }
+.bg-idle {
+  background-color: $warning;
+}
+.bg-inactive {
+  background-color: $danger;
+}
+/* --- */
+
 
 .partner-list *:not(.show-details) {
   text-decoration: none;
@@ -138,21 +160,49 @@ body {
       background-color: $selected-color;
     }
   }
+  .stops-list .stop-item{
+    width: $col-48p;
+    &:nth-child(2n) {
+      margin-right: 0 !important;
+    }
+  }
+  
 }
 
+/* media query for mobile devices */
 @include media-breakpoint-down(sm) { 
   .partner-list {
     border: 1px solid $border-color;
     padding: $spacer / 2;
     margin: $spacer / 2;
   }
-  
+  .cp-wrapper {
+    bottom: -1.5 * $spacer;
+  }
+  .map-container {
+    margin-top: 2 * $spacer !important;
+  }
+  .stops-list .stop-item{
+    width: 100%;
+    margin-right: 0 !important;
+  }
+  .rec-carousel-wrapper .rec-arrow {
+    height: 25px;
+    width: 25px;
+    min-width: 25px;
+    font-size: 1rem;
+    padding: 0;
+    line-height: 1.5rem;
+    background: #000;
+    color: #fff;
+    font-weight: 400;
+  }
 }
 
-// .modal.fade:not(.in).left .modal-dialog {
-//   -webkit-transform: translate3d(-25%, 0, 0);
-//   transform: translate3d(-25%, 0, 0);
-// }
+/* --- */
+
+
+/* modal style */
 
 .modal.left .modal-dialog {
   position:absolute;
@@ -184,10 +234,6 @@ body {
 	transform: translate3d(0, 25%, 0);
 }
 
-// .left.fade {
-//   transition: margin .25s ease-out;
-// }
-
 .modal.left.fade .modal-dialog{
   // left: -320px;
   -webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
@@ -200,19 +246,5 @@ body {
   left: 0;
 }
 
-// .modal-close {
-//   padding: 0;
-//   cursor: pointer;
-//   background: transparent;
-//   border: 0;
-//   -webkit-appearance: none;
-//   float: right;
-//   font-size: 22.5px;
-//   font-weight: bold;
-//   line-height: 1;
-//   margin-top: -2px;
-//   color: #333333;
-//   text-decoration: none;
-//   text-shadow: none;
-//   opacity: 0.4;
-// }
+/* --- */
+

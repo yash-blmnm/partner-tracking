@@ -1,0 +1,111 @@
+{
+    "partners" : [
+        {
+            "name":  "Kannan.S",
+            "id": "OMA00007",
+            "phone": 9988776655,
+            "status": 2,
+            "currentOrderId": "OMV00035",
+            "previousOrders": []
+    
+        },
+        {
+            "name":  "Sivasubramanian K",
+            "id": "OMA00005",
+            "phone": 9988776644,
+            "status": 2,
+            "currentOrderId": "OMV00033",
+            "previousOrders": []
+        },
+        {
+            "name":  "Jayaram",
+            "id": "OMA00011",
+            "phone": 9876598765,
+            "status": 3,
+            "currentOrderId": null,
+            "previousOrders": []
+        },
+        {
+            "name":  "Saravanan",
+            "id": "OMA00006",
+            "phone": 9182736451,
+            "status": 3,
+            "currentOrderId": null,
+            "previousOrders": []
+        },
+        {
+            "name":  "Shreekesh",
+            "id": "OMA00028",
+            "phone": 8765432190,
+            "status": 0,
+            "currentOrderId": null,
+            "previousOrders": []
+        },
+        {
+            "name":  "Rakesh",
+            "id": "OMA00021",
+            "phone": 7654321098,
+            "status": 0,
+            "currentOrderId": null,
+            "previousOrders": []
+        },
+        {
+            "name":  "Parth Shah",
+            "id": "OMA00031",
+            "phone": 9012345678,
+            "status": 0,
+            "currentOrderId": null,
+            "previousOrders": []
+        }
+    ],
+    "orders" : [
+        {
+            "id": "OMV00033",
+            "stops": [ 
+                {
+                    "lat": 13.08836470755512,
+                    "lng": 80.25628271051687,
+                    "time": "9:00 AM"
+                },
+                {
+                    "lat": 13.085525523659058,
+                    "lng": 80.27108448096556,
+                    "time": "9:20 AM"
+                },
+                {
+                    "lat": 13.09807986387968,
+                    "lng": 80.29048087545675,
+                    "time": "9:30 AM"
+                }
+            ],
+            "partnerId": "OMA00005"
+        },
+        {
+            "id": "OMV00035",
+            "stops": [ 
+                {
+                    "lat": 13.038925932742305,
+                    "lng": 80.23510532923979,
+                    "time": "4:15 PM"
+                },
+                {
+                    "lat": 13.0256068399057,
+                    "lng": 80.22368045994085,
+                    "time": "4:40 PM"
+                },
+                {
+                    "lat": 13.008053392373876,
+                    "lng": 80.21008166023535,
+                    "time": "5:00 PM"
+                },
+                {
+                    "lat": 12.984918680179826,
+                    "lng": 80.21649482198995,
+                    "time": "5:10 PM"
+                }
+            ],
+            "partnerId": "OMA00007"
+        }
+        
+    ]
+}

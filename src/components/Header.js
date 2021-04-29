@@ -3,9 +3,7 @@ import {useState} from 'react';
 import {isMobile} from 'react-device-detect';
 import LeftSideModal from './LeftSideModal';
 import { Link } from 'react-router-dom';
-
-// import container from 'tailwindcss';
-// import 
+import logo from '../assets/logo.png';
 
 function Header() {
 
@@ -24,14 +22,14 @@ function Header() {
             </svg>
           </span>
           <a className="navbar-brand" href="#">
-            <img src='./assets/logo.png' width='85px'/>
+            <img src={logo} width='85px'/>
           </a>
           <Link to="/" type="button" className="btn btn-warning px-2 py-1 call-btn rounded-pill">All Partners</Link>
         </div>
         : 
         <div className="container-fluid p-1 mx-3">
           <a className="navbar-brand" href="#">
-            <img src='./assets/logo.png' width='85px'/>
+            <img src={logo} width='85px'/>
           </a>
           <div className="d-flex align-items-center">
             <span className="fw-light me-4">Logged in as <strong>dev@orocorp.in</strong></span>
