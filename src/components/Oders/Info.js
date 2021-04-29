@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react'
-import {orders} from '../constants/mock.json'
-import StopDetails from './StopDetails';
+import {orders} from '../../constants/mock.json'
+import StopInfo from './StopInfo';
 import {isMobile} from 'react-device-detect';
 import Carousel from 'react-elastic-carousel'
 
 
-function OrderDetails({ partnerId }) {
+function OrderInfo({ partnerId }) {
   let [currentOrder, setCurrentOrder] = useState(orders.find(o => o.partnerId == partnerId))
   useEffect(() => {
     setCurrentOrder(orders.find(o => o.partnerId == partnerId));
@@ -16,7 +16,7 @@ function OrderDetails({ partnerId }) {
       <Carousel itemsToShow={1} pagination={false}>
         {currentOrder.stops.map((stop, i) => {
           return(
-            <StopDetails stop={stop} index={i} />
+            <StopInfo stop={stop} index={i} />
           )
         })}
       </Carousel>
@@ -24,7 +24,7 @@ function OrderDetails({ partnerId }) {
       <div className="d-flex flex-row p-0 flex-wrap stops-list">
         {currentOrder.stops.map((stop, i) => {
           return(
-            <StopDetails stop={stop} index={i} />
+            <StopInfo stop={stop} index={i} />
           )
         })}
       </div>
@@ -35,5 +35,5 @@ function OrderDetails({ partnerId }) {
   )
 }
 
-export default OrderDetails;
+export default OrderInfo;
 

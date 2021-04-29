@@ -1,6 +1,6 @@
 import React from 'react'
 
-function StopDetails ({ stop, index }) {
+function StopInfo ({ stop, index }) {
 
   return (
     <div className="stop-item border border-grey me-sm-3 mb-4 bg-white">
@@ -28,4 +28,4 @@ function StopDetails ({ stop, index }) {
   )
 }
 
-export default StopDetails;
+export default StopInfo;

@@ -1,5 +1,5 @@
 import React from 'react'
-import MainContainer from './MainContainer';
+import Tracking from './Tracking';
 import {partnerDetails} from  '../constants/routes';
 import Sider from './Sider';
 import { Route } from 'react-router-dom';
@@ -13,7 +13,7 @@ function WindowView () {
         test
         <Route path={partnerDetails}>
           fuck
-          <MainContainer />
+          <Tracking />
         </Route>
       </div>
     </div>

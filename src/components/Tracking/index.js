@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import MapContainer from './MapContainer'
+import MapContainer from './Map'
 import { useParams, useLocation } from 'react-router-dom';
-import PartnerDetails from './PartnerDetails';
-import OrderDetails from './OrderDetails';
+import PartnerInfo from '../Partners/Info';
+import OrderInfo from '../Oders/Info';
 import {isMobile} from 'react-device-detect';
-import { partners } from '../constants/mock.json';
+import { partners } from '../../constants/mock.json';
 
 const statusMap = {
   0: 'inactive',
@@ -22,15 +22,12 @@ function MainContainer () {
 
   useEffect(() => {
     setPartnerId(id);
-    console.log(id);
     let currPartner = partners.find(p => p.id == id);
-    console.log(currPartner);
     setCurrentPartner(currPartner);
   }, [location.pathname])
 
 
   if(!partnerId.length){
-    console.log('loading')
     return( 'Loading... ')
   }
 
@@ -43,7 +40,7 @@ function MainContainer () {
       <h6>PARTNER DETAILS</h6>
       <div className="d-flex flex-column mb-3">
         <div className="p-2  border border-grey bg-white">
-          <PartnerDetails partner={currentPartner}/>
+          <PartnerInfo partner={currentPartner}/>
         </div>
         {partnerId && !!(currentPartner.currentOrderId) ?
         <>
@@ -53,7 +50,7 @@ function MainContainer () {
           </div>
         </div>
         <div className="py-2 my-2 border border-white">
-          <OrderDetails partnerId={partnerId}/>
+          <OrderInfo partnerId={partnerId}/>
         </div>
         </>
         : ''}

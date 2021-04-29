@@ -1,16 +1,9 @@
 import React from 'react';
 import {isMobile} from 'react-device-detect';
+import { statusMap } from '../../constants/statusMap';
 
 
-const statusMap = {
-  0: 'inactive',
-  1: 'active',
-  2: 'visit',
-  3: 'idle'
-}
-
-
-function PartnerDetails ({ partner }) {
+function PartnerInfo ({ partner }) {
 
   const cwClasses = "p-3 ms-auto";
   const cmClasses = "cp-wrapper mx-auto position-relative";
@@ -43,4 +36,4 @@ function PartnerDetails ({ partner }) {
   )
 }
 
-export default PartnerDetails;
+export default PartnerInfo;

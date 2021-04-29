@@ -1,5 +1,5 @@
 import React from 'react'
-import ListPartners from './Partners/ListPartners';
+import Partners from './Partners';
 
 function Sider () {
   return (
@@ -14,7 +14,7 @@ function Sider () {
           <input type="text" className="form-control form-control-flush ps-5 border-0 py-2" name="search" value="" placeholder="Search Partners" data-kt-search-element="input" />
         </div>
         <div className="list-group list-group-flush">
-          <ListPartners />
+          <Partners />
         </div>
       </div>
     </nav>
